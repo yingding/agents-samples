@@ -9,7 +9,7 @@ $ENV_FULL_NAME = "$ENV_NAME$VERSION$ENV_SURFIX";
 $ENV_DIR="$env:USERPROFILE\Documents\VENV\";
 
 # absolute path of requirements.txt to install for the python venv
-$PROJ_DIR="$env:USERPROFILE\Documents\VCS\democollections\ai-foundry-workshop";
+$PROJ_DIR="$env:USERPROFILE\Documents\VCS\democollections\agents-samples";
 $SubProj=""
 $typeProj="_fdy"
 $PackageFile="$PROJ_DIR\${SubProj}requirements${typeProj}.txt";
