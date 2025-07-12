@@ -8,6 +8,7 @@ samples of tools and agents
 ## MCP Reference
 * MCP tutorial https://modelcontextprotocol.info/docs/tutorials/
 * MCP Python SDK https://github.com/modelcontextprotocol/python-sdk
+* MCP SQLite explorer https://github.com/modelcontextprotocol/python-sdk/tree/main?tab=readme-ov-file#sqlite-explorer
 
 
 ## Install UV over powershell
