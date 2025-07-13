@@ -43,5 +43,6 @@ Write-Host "Arguments: ${MCP_ARGS}"
 ```
 
 ```test
-
+resources -> get_schema
+tools -> list -> "select * from titanic"
 ```
