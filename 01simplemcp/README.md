@@ -282,3 +282,9 @@ npx @modelcontextprotocol/inspector python mcp_server.py
 # 6. Fallback - test with direct client
 python client.py
 ```
+
+```powershell
+$CMD="C:\Users\yingdingwang\Documents\VENV\azfdymcp3.12uv\Scripts\python.exe";
+$ARGS="C:\Users\yingdingwang\Documents\VCS\democollections\agents-samples\01simplemcp\mcp_server.py";
+& "npx" @modelcontextprotocol/inspector $CMD $ARGS
+```
