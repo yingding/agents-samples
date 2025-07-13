@@ -29,6 +29,10 @@ Invoke-Expression "(Get-Command python).Source";
 ```
 
 
+```powershell
+(azfdymcp3.12uv) PS C:\Users\yingdingwang\Documents\VCS\democollections\agents-samples\02sqlmcp> npx @modelcontextprotocol/inspector python mcp_server.py
+```
+
 Parameterized Variant
 ```powershell
 $CMD="C:\Users\yingdingwang\Documents\VENV\azfdymcp3.12uv\Scripts\python.exe";
