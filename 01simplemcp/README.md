@@ -1,11 +1,13 @@
-## Testing MCP
+## First MCP Server
 
-### In Claude Desktop
+### Install uv on windows
+```powershell
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
-uv run mcp install server.py
-```
+Reference:
+* https://pypi.org/project/uv/
 
-### MCP Inspector
+### Create python venv with uv
 ```powershell
 $VERSION="3.12";
 $ENV_NAME="azfdymcp";
@@ -21,37 +23,22 @@ $SubProj="01simplemcp"
 $MCPServerFileName="mcp_server.py"
 $MCPServerFilePath="$PROJ_DIR\${SubProj}\${MCPServerFileName}";
 
+# activate uv venv
 & "$ENV_DIR$ENV_FULL_NAME\Scripts\Activate.ps1";
 Invoke-Expression "(Get-Command python).Source";
+
+& "uv" pip list
 ```
 
+### Install node with nvm on windows
+Install the package manager on windows
 ```powershell
-& "uv" run mcp dev mcp_server.py
+winget list nvm
+winget install --id CoreyButler.NVMforWindows
+winget upgrade --id CoreyButler.NVMforWindows
 ```
 
-```powershell
-uv run mcp dev server.py
-
-# Add dependencies
-uv run mcp dev server.py --with pandas --with numpy
-
-# Mount local code
-uv run mcp dev server.py --with-editable .
-```
-
-### MCP dev server run issue
-
-currently issue with running uv mcp dev server
-
-
-```powershell
-npx @modelcontextprotocol/inspector uv run mcp_server.py
-```
-
-Reference:
-* https://github.com/modelcontextprotocol/python-sdk/issues/623
-
-
+Install the node version, which works with mcp inspector
 ```
 nvm install 22.17.0
 nvm use 22.17.0
@@ -129,9 +116,6 @@ python validate.py
 ├── client.py             # Comprehensive MCP test client
 ├── test_simple.py        # Basic STDIO test
 ├── test_suite.py         # Comprehensive test suite
-├── test_direct.py        # Direct import test
-├── test_dev.py           # Development server test
-├── diagnose_inspector.py # Inspector diagnostic tool
 ├── validate.py           # Setup validation
 └── README.md             # This documentation
 ```
@@ -145,7 +129,14 @@ The server can be used with VS Code MCP extension by configuring:
       "command": "powershell",
       "args": ["-ExecutionPolicy", "Bypass", "-File", "mcp.ps1", "server"],
       "cwd": "c:\\Users\\yingdingwang\\Documents\\VCS\\democollections\\agents-samples\\01simplemcp"
-    }
+    },
+    "default-server": {
+			"type": "stdio",
+            "command": "C:\\Users\\yingdingwang\\Documents\\VENV\\azfdymcp3.12uv\\Scripts\\python.exe",
+            "args": [
+                "C:\\Users\\yingdingwang\\Documents\\VCS\\democollections\\agents-samples\\01simplemcp\\mcp_server.py"
+            ],
+		},
   }
 }
 ```
@@ -251,18 +242,6 @@ node <path>/bin/mcp-inspector python mcp_server.py
 C:\Users\yingdingwang\Documents\VENV\azfdymcp3.12uv\Scripts\mcp.exe dev mcp_server_enhanced.py
 ```
 
-#### **Option 4: Direct STDIO Testing (Always Works)**
-```powershell
-# Test with our Python client
-python test_mcp_inspector.py
-
-# Direct client testing
-python client.py
-
-# Enhanced server with debug output
-python mcp_server_enhanced.py
-```
-
 ### 🎯 **Quick Fix Commands (NVM Windows):**
 ```powershell
 # 1. Ensure Node.js is active
@@ -275,7 +254,7 @@ npm install -g @modelcontextprotocol/inspector
 npx @modelcontextprotocol/inspector --version
 
 # 4. Run inspector with your MCP server
-npx @modelcontextprotocol/inspector python mcp_server.py
+npx @modelcontextprotocol/inspector C:\Users\yingdingwang\Documents\VENV\azfdymcp3.12uv\Scripts\python.exe mcp_server.py
 
 # 5. If inspector works, access at: http://localhost:3000
 
@@ -283,8 +262,17 @@ npx @modelcontextprotocol/inspector python mcp_server.py
 python client.py
 ```
 
+### One liner for start mcp inspector
+Parameterized Variant
 ```powershell
 $CMD="C:\Users\yingdingwang\Documents\VENV\azfdymcp3.12uv\Scripts\python.exe";
 $ARGS="C:\Users\yingdingwang\Documents\VCS\democollections\agents-samples\01simplemcp\mcp_server.py";
 & "npx" @modelcontextprotocol/inspector $CMD $ARGS
 ```
+
+
+
+### MCP dev server run issue
+
+Reference:
+* https://github.com/modelcontextprotocol/python-sdk/issues/623
