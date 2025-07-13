@@ -27,11 +27,4 @@ switch ($Mode.ToLower()) {
         Start-Job { param($url); Start-Sleep 3; Start-Process $url } -ArgumentList "http://localhost:3000" | Out-Null
         & $mcp dev $demo
     }
-    default {
-        Write-Host "MCP Server Launcher" -ForegroundColor Yellow
-        Write-Host "Usage: .\mcp.ps1 [mode]" -ForegroundColor Cyan
-        Write-Host "  server    - STDIO server for production" -ForegroundColor White
-        Write-Host "  dev       - Development server with logging" -ForegroundColor White  
-        Write-Host "  inspector - Web inspector (auto-opens browser)" -ForegroundColor White
-    }
 }
