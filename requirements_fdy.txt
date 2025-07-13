@@ -24,3 +24,7 @@ pydantic==2.11.7
 # opentelemetry 
 opentelemetry-sdk==1.31.1
 azure-monitor-opentelemetry==1.6.10
+
+# mcp
+mcp==1.11.0
+fastmcp==2.10.5

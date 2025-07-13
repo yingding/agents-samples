@@ -1,0 +1,20 @@
+{
+	"servers": {
+		"server": {
+			"type": "stdio",
+			"command": "powershell.exe",
+			"args": ["-ExecutionPolicy", "Bypass", "-File", "C:\\Users\\yingdingwang\\Documents\\VCS\\democollections\\agents-samples\\01simplemcp\\mcp.ps1", "server"]
+		},
+		"dev": {
+			"type": "stdio", 
+			"command": "powershell.exe",
+			"args": ["-ExecutionPolicy", "Bypass", "-File", "C:\\Users\\yingdingwang\\Documents\\VCS\\democollections\\agents-samples\\01simplemcp\\mcp.ps1", "dev"]
+		},
+		"inspector": {
+			"type": "stdio",
+			"command": "powershell.exe", 
+			"args": ["-ExecutionPolicy", "Bypass", "-File", "C:\\Users\\yingdingwang\\Documents\\VCS\\democollections\\agents-samples\\01simplemcp\\mcp.ps1", "inspector"]
+		}
+	},
+	"inputs": []
+}
