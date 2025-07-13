@@ -267,8 +267,10 @@ python client.py
 Parameterized Variant
 ```powershell
 $CMD="C:\Users\yingdingwang\Documents\VENV\azfdymcp3.12uv\Scripts\python.exe";
-$ARGS="C:\Users\yingdingwang\Documents\VCS\democollections\agents-samples\01simplemcp\mcp_server.py";
-& "npx" @modelcontextprotocol/inspector $CMD $ARGS
+$SUB_PROJ="01simplemcp";
+$MCP_ARGS="C:\Users\yingdingwang\Documents\VCS\democollections\agents-samples\${SUB_PROJ}\mcp_server.py";
+Write-Host "ARGS value: ${MCP_ARGS}"
+& "npx" @modelcontextprotocol/inspector $CMD ${MCP_ARGS}
 ```
 
 

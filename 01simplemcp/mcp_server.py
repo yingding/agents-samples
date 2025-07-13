@@ -6,11 +6,13 @@ import sys
 # Create MCP server
 mcp = FastMCP("Demo")
 
+# tools
 @mcp.tool()
 def sum(a: int, b: int) -> int:
     """Add two numbers"""
     return a + b
 
+# resources
 @mcp.resource("greeting://{name}")
 def get_greeting(name: str) -> str:
     """Get a personalized greeting"""
