@@ -39,6 +39,7 @@ winget upgrade --id CoreyButler.NVMforWindows
 ```
 
 Install the node version, which works with mcp inspector
+and also install the mcp inspector
 ```
 nvm install 22.17.0
 nvm use 22.17.0
