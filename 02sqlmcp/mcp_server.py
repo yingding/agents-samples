@@ -1,10 +1,11 @@
 import sqlite3
 
 from mcp.server.fastmcp import FastMCP
-from .util import get_db_file_path
+# from util import get_db_file_path
 
 mcp = FastMCP("SQLite Explorer")
-DB_PATH = get_db_file_path()
+# DB_PATH = get_db_file_path("sqlite_explorer.db")
+DB_PATH = "C:\\Users\\yingdingwang\\Documents\\VCS\\democollections\\agents-samples\\02sqlmcp\\data\\database.db"
 
 @mcp.resource("schema://main")
 def get_schema() -> str:

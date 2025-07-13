@@ -7,6 +7,13 @@
                 "C:\\Users\\yingdingwang\\Documents\\VCS\\democollections\\agents-samples\\01simplemcp\\mcp_server.py"
             ],
 		},
+		"default-sql": {
+			"type": "stdio",
+            "command": "C:\\Users\\yingdingwang\\Documents\\VENV\\azfdymcp3.12uv\\Scripts\\python.exe",
+            "args": [
+                "C:\\Users\\yingdingwang\\Documents\\VCS\\democollections\\agents-samples\\02sqlmcp\\mcp_server.py"
+            ],
+		},
 		"server": {
 			"type": "stdio",
 			"command": "powershell.exe",
