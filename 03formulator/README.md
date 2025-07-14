@@ -46,8 +46,5 @@ Use the AOAI endpoint
 
 
 ## Reference
-* https://github.com/microsoft/data-formulator
-* https://www.microsoft.com/en-us/research/blog/data-formulator-exploring-how-ai-can-help-analysts-create-rich-data-visualizations/?msockid=3d7008831e886de00bfb1d6a1feb6caf
-
-
-
+* Opensource Code Data Formulator (AI Report Visualization) https://github.com/microsoft/data-formulator
+* Data Formulator Blog Post https://www.microsoft.com/en-us/research/blog/data-formulator-exploring-how-ai-can-help-analysts-create-rich-data-visualizations/?msockid=3d7008831e886de00bfb1d6a1feb6caf
